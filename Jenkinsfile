@@ -11,7 +11,9 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'npm install mirror-config-china && npm run mirror-config-china --registry=https://registry.npm.taobao.org'
+                sh 'touch /root/.bash_profile'
+                sh 'npm install mirror-config-china --registry=https://registry.npm.taobao.org'
+                sh 'npm run mirror-config-china --registry=https://registry.npm.taobao.org'
                 sh 'npm install'
             }
         }
